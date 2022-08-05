@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>AdminLTE 3 | ChartJS</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('Template/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('Template/plugins/fontawesome-free/css/all.min.cs')}}s">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('Template/dist/css/adminlte.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini">
-<!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
  @include('partial.nav')
@@ -23,13 +22,14 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{asset('Template/index3.html')}}" class="brand-link">
-      <img src="{{asset('Template/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('Template/dist/img/AdminLTELogo.png')}}"
+           alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user (optional) -->
+      <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="{{asset('Template/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
@@ -65,57 +65,30 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Blank Page</h1>
+            <h1>ChartJS</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li>
+              <li class="breadcrumb-item active">ChartJS</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    @yield('Header')
 
     <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      {{-- <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Title</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-        </div>
-        <div class="card-body">
-          Start creating your amazing application!
-        </div> --}}
-        @include('partial.conten')
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
-      </div>
-      <!-- /.card -->
-
-    </section>
+    @include('partial.conten')
+    @yield('conten')
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
   @include('partial.footer')
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
+    <!-- Add Content Here -->
   </aside>
   <!-- /.control-sidebar -->
 </div>
@@ -125,86 +98,193 @@
 <script src="{{asset('Template/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('Template/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- ChartJS -->
+<script src="{{asset('Template/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('Template/dist/js/adminlte.min.js')}}"></script>
-<!-- jQuery Knob -->
-<script src="{{asset('Template/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{asset('Template/plugins/sparklines/sparkline.js')}}"></script>
+<!-- Page specific script -->
 <script>
-      $(function () {
-    /* jQueryKnob */
+  $(function () {
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
 
-    $('.knob').knob({
-      /*change : function (value) {
-       //console.log("change : " + value);
-       },
-       release : function (value) {
-       console.log("release : " + value);
-       },
-       cancel : function () {
-       console.log("cancel : " + this.value);
-       },*/
-      draw: function () {
+    //--------------
+    //- AREA CHART -
+    //--------------
 
-        // "tron" case
-        if (this.$.data('skin') == 'tron') {
+    // Get context with jQuery - using jQuery's .get() method.
+    var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
-          var a   = this.angle(this.cv)  // Angle
-            ,
-              sa  = this.startAngle          // Previous start angle
-            ,
-              sat = this.startAngle         // Start angle
-            ,
-              ea                            // Previous end angle
-            ,
-              eat = sat + a                 // End angle
-            ,
-              r   = true
+    var areaChartData = {
+      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label               : 'Digital Goods',
+          backgroundColor     : 'rgba(60,141,188,0.9)',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 48, 40, 19, 86, 27, 90]
+        },
+        {
+          label               : 'Electronics',
+          backgroundColor     : 'rgba(210, 214, 222, 1)',
+          borderColor         : 'rgba(210, 214, 222, 1)',
+          pointRadius         : false,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : [65, 59, 80, 81, 56, 55, 40]
+        },
+      ]
+    }
 
-          this.g.lineWidth = this.lineWidth
-
-          this.o.cursor
-          && (sat = eat - 0.3)
-          && (eat = eat + 0.3)
-
-          if (this.o.displayPrevious) {
-            ea = this.startAngle + this.angle(this.value)
-            this.o.cursor
-            && (sa = ea - 0.3)
-            && (ea = ea + 0.3)
-            this.g.beginPath()
-            this.g.strokeStyle = this.previousColor
-            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false)
-            this.g.stroke()
+    var areaChartOptions = {
+      maintainAspectRatio : false,
+      responsive : true,
+      legend: {
+        display: false
+      },
+      scales: {
+        xAxes: [{
+          gridLines : {
+            display : false,
           }
-
-          this.g.beginPath()
-          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor
-          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false)
-          this.g.stroke()
-
-          this.g.lineWidth = 2
-          this.g.beginPath()
-          this.g.strokeStyle = this.o.fgColor
-          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false)
-          this.g.stroke()
-
-          return false
-        }
+        }],
+        yAxes: [{
+          gridLines : {
+            display : false,
+          }
+        }]
       }
+    }
+
+    // This will get the first returned node in the jQuery collection.
+    new Chart(areaChartCanvas, {
+      type: 'line',
+      data: areaChartData,
+      options: areaChartOptions
     })
-    /* END JQUERY KNOB */
 
-    //INITIALIZE SPARKLINE CHARTS
-    // var sparkline1 = new Sparkline($('#sparkline-1')[0], { width: 240, height: 70, lineColor: '#92c1dc', endColor: '#92c1dc' })
-    // var sparkline2 = new Sparkline($('#sparkline-2')[0], { width: 240, height: 70, lineColor: '#f56954', endColor: '#f56954' })
-    // var sparkline3 = new Sparkline($('#sparkline-3')[0], { width: 240, height: 70, lineColor: '#3af221', endColor: '#3af221' })
+    //-------------
+    //- LINE CHART -
+    //--------------
+    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+    var lineChartOptions = $.extend(true, {}, areaChartOptions)
+    var lineChartData = $.extend(true, {}, areaChartData)
+    lineChartData.datasets[0].fill = false;
+    lineChartData.datasets[1].fill = false;
+    lineChartOptions.datasetFill = false
 
-    // sparkline1.draw([1000, 1200, 920, 927, 931, 1027, 819, 930, 1021])
-    // sparkline2.draw([515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921])
-    // sparkline3.draw([15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21])
+    var lineChart = new Chart(lineChartCanvas, {
+      type: 'line',
+      data: lineChartData,
+      options: lineChartOptions
+    })
 
+    //-------------
+    //- DONUT CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+    var donutData        = {
+      labels: [
+          'Chrome',
+          'IE',
+          'FireFox',
+          'Safari',
+          'Opera',
+          'Navigator',
+      ],
+      datasets: [
+        {
+          data: [700,500,400,600,300,100],
+          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+        }
+      ]
+    }
+    var donutOptions     = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    new Chart(donutChartCanvas, {
+      type: 'doughnut',
+      data: donutData,
+      options: donutOptions
+    })
+
+    //-------------
+    //- PIE CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+    var pieData        = donutData;
+    var pieOptions     = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    new Chart(pieChartCanvas, {
+      type: 'pie',
+      data: pieData,
+      options: pieOptions
+    })
+
+    //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#barChart').get(0).getContext('2d')
+    var barChartData = $.extend(true, {}, areaChartData)
+    var temp0 = areaChartData.datasets[0]
+    var temp1 = areaChartData.datasets[1]
+    barChartData.datasets[0] = temp1
+    barChartData.datasets[1] = temp0
+
+    var barChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      datasetFill             : false
+    }
+
+    new Chart(barChartCanvas, {
+      type: 'bar',
+      data: barChartData,
+      options: barChartOptions
+    })
+
+    //---------------------
+    //- STACKED BAR CHART -
+    //---------------------
+    var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
+    var stackedBarChartData = $.extend(true, {}, barChartData)
+
+    var stackedBarChartOptions = {
+      responsive              : true,
+      maintainAspectRatio     : false,
+      scales: {
+        xAxes: [{
+          stacked: true,
+        }],
+        yAxes: [{
+          stacked: true
+        }]
+      }
+    }
+
+    new Chart(stackedBarChartCanvas, {
+      type: 'bar',
+      data: stackedBarChartData,
+      options: stackedBarChartOptions
+    })
   })
 </script>
 </body>
