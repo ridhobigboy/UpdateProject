@@ -76,7 +76,7 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-    @yield('Header')
+    @yield('header')
 
     <!-- Main content -->
     @include('partial.conten')

@@ -12,21 +12,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="Template/index.html" class="nav-link">
+                <a href="/Page/Dosen" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
+                  <p>Dosen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="Template/index2.html" class="nav-link">
+                <a href="/Page/Matkul" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
+                  <p>Mata Kuliah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="Template/index3.html" class="nav-link">
+                <a href="/Page/Prodi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Prodi</p>
                 </a>
               </li>
             </ul>
