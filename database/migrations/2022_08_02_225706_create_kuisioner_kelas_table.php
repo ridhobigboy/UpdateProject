@@ -14,7 +14,12 @@ class CreateKuisionerKelasTable extends Migration
     public function up()
     {
         Schema::create('kuisioner_kelas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->char('nim');
+            $table->integer('kelas_id');
+            $table->integer('pertanyaan_id');
+            $table->integer('jawaban_id');
+            $table->char('jawaban_text');
             $table->timestamps();
         });
     }

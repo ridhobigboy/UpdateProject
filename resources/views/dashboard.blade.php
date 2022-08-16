@@ -1,7 +1,7 @@
 @extends('Layout.master')
 
 @section('header')
-    AIS
+    Dashboard
 @endsection
 
 @section('conten')

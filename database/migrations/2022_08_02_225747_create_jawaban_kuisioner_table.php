@@ -14,7 +14,8 @@ class CreateJawabanKuisionerTable extends Migration
     public function up()
     {
         Schema::create('jawaban_kuisioner', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->char('jawaban');
             $table->timestamps();
         });
     }

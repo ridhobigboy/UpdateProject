@@ -14,8 +14,9 @@ class CreateMatkulTable extends Migration
     public function up()
     {
         Schema::create('matkul', function (Blueprint $table) {
-            $table->increment('id')->index;
+            $table->increments('id')->index();
             $table->string('nama');
+            $table->integer('sks');
             $table->timestamps();
         });
     }

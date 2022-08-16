@@ -4,20 +4,20 @@ Dosen
 @endsection
 
 @section('conten')
-<a href="/prodi/tambah">+ Tambah prodi</a>
+<a href="/Dosen/Tambah">+ Tambah prodi</a>
 <br><br>
 <table border="1">
     <tr>
         <th>id</th>
         <th>nama</th>
     </tr>
-    @foreach ($prodi as $p)
+    @foreach ($dosen as $d)
         <tr>
-            <td>{{ $p->id}}</td>
-            <td>{{ $p->nama}}</td>
+            <td>{{ $d->id}}</td>
+            <td>{{ $d->nama}}</td>
             <td>
-                <a href="/prodi/edit/{{ $p->id}}">Edit</a>
-                <a href="/prodi/hapus/{{ $p->id}}">Hapus</a>
+                <a href="/Dosen/Edit/{{ $d->id}}">Edit</a>
+                <a href="/Dosen/Hapus/{{ $d->id}}">Hapus</a>
             </td>
         </tr>
     @endforeach

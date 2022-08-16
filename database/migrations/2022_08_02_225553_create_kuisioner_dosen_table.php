@@ -14,7 +14,10 @@ class CreateKuisionerDosenTable extends Migration
     public function up()
     {
         Schema::create('kuisioner_dosen', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->text('pertanyaan');
+            $table->smallInteger('aktif');
+            $table->smallInteger('choice');
             $table->timestamps();
         });
     }

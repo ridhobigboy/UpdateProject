@@ -12,19 +12,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/Page/Dosen" class="nav-link">
+                <a href="Page.Dosen" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dosen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/Page/Matkul" class="nav-link">
+                <a href="Page.Matkul" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mata Kuliah</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/Page/Prodi" class="nav-link">
+                <a href="Page.Prodi" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Prodi</p>
                 </a>
