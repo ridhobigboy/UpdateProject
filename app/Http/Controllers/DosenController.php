@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class DosenController extends Controller
 {
     public function index(){
         //mengambil data dosen
-        $dosen = dosen::all();
+        // $dosen = Dosen::all();
+        // $dosen = dosen::all();
 
-         return view('Page.Dosen',['Dosen'=>$dosen]);
+        //  return view('Page.Dosen',['Dosen'=>$dosen]);
+        return view('Page.Dosen');
      }
     // public function tambah(){
     //     return view('tambahdosen');

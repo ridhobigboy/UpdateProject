@@ -53,7 +53,7 @@ Route::get('Page.Dosen', 'DosenController@index');
 // Route::get('dosen/hapus/{id}', 'DosenController@hapus');
 
 //Routing Prodi
- Route::get('Prodi', 'ProdiController@index');
+ Route::get('Page.Prodi', 'ProdiController@index');
 // Route::get('Prodi/tambah', 'ProdiController@tambah');
 // Route::post('Prodi/new', 'ProdiController@new');
 // Route::get('Prodi/edit/{id}', 'ProdiController@edit');
@@ -61,7 +61,7 @@ Route::get('Page.Dosen', 'DosenController@index');
 // Route::get('Prodi/hapus/{id}', 'ProdiController@hapus');
 
 //Routing Matakuliah
- Route::get('matkul', 'MatakuliahController@index');
+ Route::get('Page.Matkul', 'MatkulController@index');
 // Route::get('matkul/tambah', 'MatakuliahController@tambah');
 // Route::post('matkul/new', 'MatakuliahController@new');
 // Route::get('matkul/edit/{id}', 'MatakuliahController@edit');

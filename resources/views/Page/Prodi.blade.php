@@ -5,7 +5,7 @@
 @endsection
 
 @section('conten')
-<a href="/prodi/tambah">+ Tambah prodi</a>
+{{-- <a href="/prodi/tambah">+ Tambah prodi</a>
 <br><br>
 <table border="1">
     <tr>
@@ -22,5 +22,5 @@
             </td>
         </tr>
     @endforeach
-</table>
+</table> --}}
 @endsection
