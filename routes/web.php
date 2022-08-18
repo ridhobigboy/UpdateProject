@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('dashboard', 'DashboardController@index');
+Route::get('Page.Diagram','DiagramController@index');
 
 //Routing JawabanKuisioner
 // Route::get('jawaban', 'JawabanController@index');
