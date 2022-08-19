@@ -1,27 +1,26 @@
 @extends('layout.master')
 
-@section('header','prodi')
+@section('header')
     Prodi
 @endsection
 
 @section('conten')
-{{-- <a href="/Dosen/Tambah">+ Tambah prodi</a>
-<br><br>
-<table border="1">
-    <tr>
-        <th>id</th>
-        <th>nama</th>
-    </tr>
-    @foreach ($dosen as $d)
+<table class="table">
+    <thead>
         <tr>
-            <td>{{ $d->id}}</td>
-            <td>{{ $d->nama}}</td>
-            <td>
-                <a href="/Dosen/Edit/{{ $d->id}}">Edit</a>
-                <a href="/Dosen/Hapus/{{ $d->id}}">Hapus</a>
-            </td>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">SKS</th>
         </tr>
-    @endforeach
-</table> --}}
-<h1>ini halaman matkul</h1>
+    </thead>
+    <tbody>
+        @foreach ($matkul as $m)
+            <tr>
+                <th scope="row">{{$m->id}}</th>
+                <td>{{$m->nama}}</td>
+                <td>{{$m->sks}}</td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
 @endsection

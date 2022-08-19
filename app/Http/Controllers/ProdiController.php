@@ -1,14 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Prodi;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class ProdiController extends Controller
 {
     public function index(){
-        return view('Page.Prodi');
+        $prodi = DB::table('prodi')->get();
+        return view('Page.Prodi',['prodi'=>$prodi]);
     }
     // public function index(){
     //     $prodi = DB::table('Prodi')->get();

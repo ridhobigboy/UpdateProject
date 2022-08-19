@@ -9,11 +9,10 @@ class DosenController extends Controller
 {
     public function index(){
         //mengambil data dosen
-        // $dosen = Dosen::all();
-        // $dosen = dosen::all();
+        $dosen = DB::table('dosen')->get();
 
         //  return view('Page.Dosen',['Dosen'=>$dosen]);
-        return view('Page.Dosen');
+        return view('Page.Dosen',['dosen'=>$dosen]);
      }
     // public function tambah(){
     //     return view('tambahdosen');
