@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-md-6">
           <!-- AREA CHART -->
-          <div class="card card-primary">
+          {{-- <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Area Chart</h3>
 
@@ -29,7 +29,7 @@
               </div>
             </div>
             <!-- /.card-body -->
-          </div>
+          </div> --}}
           <!-- /.card -->
 
           <!-- DONUT CHART -->
@@ -54,7 +54,7 @@
           <!-- /.card -->
 
           <!-- PIE CHART -->
-          <div class="card card-danger">
+           <div class="card card-danger">
             <div class="card-header">
               <h3 class="card-title">Pie Chart</h3>
 
@@ -78,7 +78,7 @@
         <!-- /.col (LEFT) -->
         <div class="col-md-6">
           <!-- LINE CHART -->
-          <div class="card card-info">
+          {{-- <div class="card card-info">
             <div class="card-header">
               <h3 class="card-title">Line Chart</h3>
 
@@ -97,11 +97,11 @@
               </div>
             </div>
             <!-- /.card-body -->
-          </div>
+          </div> --}}
           <!-- /.card -->
 
           <!-- BAR CHART -->
-          <div class="card card-success">
+           <div class="card card-success">
             <div class="card-header">
               <h3 class="card-title">Bar Chart</h3>
 
@@ -124,7 +124,7 @@
           <!-- /.card -->
 
           <!-- STACKED BAR CHART -->
-          <div class="card card-success">
+          {{-- <div class="card card-success">
             <div class="card-header">
               <h3 class="card-title">Stacked Bar Chart</h3>
 
@@ -143,7 +143,7 @@
               </div>
             </div>
             <!-- /.card-body -->
-          </div>
+          </div> --}}
           <!-- /.card -->
 
         </div>
