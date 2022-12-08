@@ -1,4 +1,4 @@
-<thead>
+{{-- <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">First</th>
@@ -25,4 +25,4 @@
       <td>@twitter</td>
     </tr>
   </tbody>
-</table>
+</table> --}}
