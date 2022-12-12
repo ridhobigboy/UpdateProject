@@ -35,7 +35,7 @@
           <!-- DONUT CHART -->
           <div class="card card-danger">
             <div class="card-header">
-              <h3 class="card-title">Donut Chart</h3>
+              <h3 class="card-title">Penguasaan Materi</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -56,7 +56,7 @@
           <!-- PIE CHART -->
            <div class="card card-danger">
             <div class="card-header">
-              <h3 class="card-title">Pie Chart</h3>
+              <h3 class="card-title">Ketepatan Waktu</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -103,7 +103,7 @@
           <!-- BAR CHART -->
            <div class="card card-success">
             <div class="card-header">
-              <h3 class="card-title">Bar Chart</h3>
+              <h3 class="card-title">Pemberian Feedback</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -124,7 +124,7 @@
           <!-- /.card -->
 
           <!-- STACKED BAR CHART -->
-          <div class="card card-success">
+          {{-- <div class="card card-success">
             <div class="card-header">
               <h3 class="card-title">Stacked Bar Chart</h3>
 
@@ -143,7 +143,7 @@
               </div>
             </div>
             <!-- /.card-body -->
-          </div>
+          </div> --}}
           <!-- /.card -->
 
         </div>
@@ -174,78 +174,78 @@
     //--------------
 
     // Get context with jQuery - using jQuery's .get() method.
-    var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+     var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
-    var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [
-        {
-          label               : 'Digital Goods',
-          backgroundColor     : 'rgba(60,141,188,0.9)',
-          borderColor         : 'rgba(60,141,188,0.8)',
-          pointRadius          : false,
-          pointColor          : '#3b8bba',
-          pointStrokeColor    : 'rgba(60,141,188,1)',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
-        },
-        {
-          label               : 'Electronics',
-          backgroundColor     : 'rgba(210, 214, 222, 1)',
-          borderColor         : 'rgba(210, 214, 222, 1)',
-          pointRadius         : false,
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
-        },
-      ]
-    }
+     var areaChartData = {
+       labels  : ['Sangat Setuju', 'Setuju', 'Tidak Setuju', 'Sangat Tidak Setuju'],
+       datasets: [
+         {
+           label               : 'Sistem Informasi',
+           backgroundColor     : 'rgba(60,141,188,0.9)',
+           borderColor         : 'rgba(60,141,188,0.8)',
+           pointRadius          : false,
+           pointColor          : '#3b8bba',
+           pointStrokeColor    : 'rgba(60,141,188,1)',
+           pointHighlightFill  : '#fff',
+           pointHighlightStroke: 'rgba(60,141,188,1)',
+           data                : [28, 48, 40, 19, 86, 27, 90]
+         },
+         {
+           label               : 'Teknik Informatika',
+           backgroundColor     : 'rgba(210, 214, 222, 1)',
+           borderColor         : 'rgba(210, 214, 222, 1)',
+           pointRadius         : false,
+           pointColor          : 'rgba(210, 214, 222, 1)',
+           pointStrokeColor    : '#c1c7d1',
+           pointHighlightFill  : '#fff',
+           pointHighlightStroke: 'rgba(220,220,220,1)',
+           data                : [65, 59, 80, 81, 56, 55, 40]
+         },
+       ]
+     }
 
-    var areaChartOptions = {
-      maintainAspectRatio : false,
+     var areaChartOptions = {
+       maintainAspectRatio : false,
       responsive : true,
-      legend: {
-        display: false
-      },
-      scales: {
-        xAxes: [{
-          gridLines : {
-            display : false,
-          }
-        }],
-        yAxes: [{
-          gridLines : {
-            display : false,
-          }
-        }]
-      }
-    }
+       legend: {
+         display: false
+       },
+       scales: {
+         xAxes: [{
+           gridLines : {
+             display : false,
+           }
+         }],
+         yAxes: [{
+           gridLines : {
+             display : false,
+           }
+         }]
+       }
+     }
 
     // This will get the first returned node in the jQuery collection.
-    new Chart(areaChartCanvas, {
-      type: 'line',
-      data: areaChartData,
-      options: areaChartOptions
-    })
+     new Chart(areaChartCanvas, {
+       type: 'line',
+       data: areaChartData,
+       options: areaChartOptions
+     })
 
     //-------------
     //- LINE CHART -
     //--------------
-    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-    var lineChartOptions = $.extend(true, {}, areaChartOptions)
-    var lineChartData = $.extend(true, {}, areaChartData)
-    lineChartData.datasets[0].fill = false;
-    lineChartData.datasets[1].fill = false;
-    lineChartOptions.datasetFill = false
+     var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+     var lineChartOptions = $.extend(true, {}, areaChartOptions)
+     var lineChartData = $.extend(true, {}, areaChartData)
+     lineChartData.datasets[0].fill = false;
+     lineChartData.datasets[1].fill = false;
+     lineChartOptions.datasetFill = false
 
-    var lineChart = new Chart(lineChartCanvas, {
-      type: 'line',
-      data: lineChartData,
-      options: lineChartOptions
-    })
+     var lineChart = new Chart(lineChartCanvas, {
+       type: 'line',
+       data: lineChartData,
+       options: lineChartOptions
+     })
 
     //-------------
     //- DONUT CHART -
@@ -254,17 +254,15 @@
     var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
     var donutData        = {
       labels: [
-          'Chrome',
-          'IE',
-          'FireFox',
-          'Safari',
-          'Opera',
-          'Navigator',
+          'Sangat Setuju',
+          'Setuju',
+          'Tidak Setuju',
+          'Sangat Tidak Setuju',
       ],
       datasets: [
         {
-          data: [700,500,400,600,300,100],
-          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+          data: [700,500,400,600],
+          backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef'],
         }
       ]
     }
